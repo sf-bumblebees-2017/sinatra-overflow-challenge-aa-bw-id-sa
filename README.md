@@ -2,7 +2,6 @@
 <h3>Antony Adhiban, Brian Wong, Ian Driscoll, Stacy Areas</h3>
 
 <u>User Stories</u>
-Users can:
 <ul>
 	<li>Create new account</li>
 	<li>Login and logout</li>
