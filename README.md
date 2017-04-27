@@ -1,5 +1,7 @@
 <h1>Team Awesome:</h1>
 
+---
+
 <h3>Antony Adhiban, Brian Wong, Ian Driscoll, Stacy Areas</h3>
 
 ---
