@@ -19,10 +19,10 @@
       <h2><a href='/questions/<%= question.id %>'><%= question.title %></a></h2>
       <p>
         <span class='votes'><%= question.votes %></span>
-        <span class='username'><%= question.username %></span>
-        <span class='timestamp'><%= question.time_since_creation %></span>
+        <span class='username'><%= question.user_id %></span>
+        <span class='timestamp'><%= question %></span>
         <span class='comment-count'><%= question.comment_count %></span>
-      </p> 
+      </p>
     </article>
 
   <% end %>

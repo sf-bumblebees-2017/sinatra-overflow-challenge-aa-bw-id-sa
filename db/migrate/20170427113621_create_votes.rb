@@ -6,7 +6,7 @@ class CreateVotes < ActiveRecord::Migration
   		t.integer :votable_id, {null: false}
   		t.integer :user_id, {null: false}
 
-  		t.timestamp(null: false)
+  		t.timestamps(null: false)
   	end
   	add_index :votes, [:votable_id, :votable_type]
   end
