@@ -1,8 +1,10 @@
 <h1>Team Awesome:</h1>
----
+
 <h3>Antony Adhiban, Brian Wong, Ian Driscoll, Stacy Areas</h3>
 ---
+
 **User Stories**
+
 <ul>
 	<li>Create new account</li>
 	<li>Login and logout</li>
