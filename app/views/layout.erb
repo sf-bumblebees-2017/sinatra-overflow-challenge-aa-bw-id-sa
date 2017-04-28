@@ -18,13 +18,25 @@
   <title></title>
 </head>
 <body>
+<div id="link-button">
 <header>
-  <h1><a href="/">Sinatra Overflow</a></h1>
-  <p>
-    <a href="#questions">new</a>
-    <a href="#">login</a>
-  </p>
+<a href="/">Sinatra Overflow</a>
+  <% if current_user %>
+  <% @current_user = current_user %>
+    <a href="/users/<%=@current_user.id%>">Profile</a>
+    <%= erb :'_logout', layout: false %>
+  <% else %>
+    <a href="/sessions/new">Login</a>
+    <a href="/users/new">Sign Up</a>
+  <% end %>
 </header>
+</div>
+<div id="page-body">
   <%= yield %>
+</div>
+
 </body>
+<footer>
+  WE CHALLENGE YOU TO FIND A BETT3R BACKGROUND IMAGE
+</footer>
 </html>

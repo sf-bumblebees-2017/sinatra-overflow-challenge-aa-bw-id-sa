@@ -1,17 +1,17 @@
-get '/users/new' do 
+get '/users/new' do
   erb :'users/new'
-end 
+end
 
-post '/users' do 
-  @user = User.new(pararms[:user])
-  if @user.save 
+post '/users' do
+  @user = User.new(params[:user])
+  if @user.save
     redirect '/'
   else
     erb :'users/new'
-  end 
-end 
+  end
+end
 
-get '/users/:id' do 
+get '/users/:id' do
   @user = User.find(params[:id])
   redirect '/sessions/new' if logged_in?
   erb :'/'

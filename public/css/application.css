@@ -1,14 +1,27 @@
 body {
   counter-reset:section;
-  background-color: #F6F6EF;
+  background-image: url("http://i.imgur.com/DdZGm1I.jpg");
   font-family: Verdana;
   max-width: 700px;
   margin: 0 auto;
 }
 
+#page-body {
+  background-color: white;
+  border-color: #ff0066;
+  border-style: dotted solid;
+  border-width: 20px;
+}
+
+footer {
+  background-color: #ffff66;
+  padding: 10%;
+
+}
+
 header {
-  background-color: #99ccff;
-  padding: 5px 5px;
+  background-color: #66ff33;
+  padding: 10%;
 }
 
 header h1 {
@@ -33,6 +46,7 @@ header p a:nth-child(n + 2):before {
 
 article {
   margin: 5px 5px;
+  background-color: white;
 }
 
 article a.vote-button {
