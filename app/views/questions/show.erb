@@ -1,6 +1,20 @@
-<h1> <%= @questions.title %> </h1>
+<h1> <%= @question.title %> </h1>
 
-<div class="question_displayyyyyy">
 
-	 
+
+<div class="question_display">
+<h2>Initial Question</h2>
+<p><%= @question.body %></p>
+
+<p>Created:</p><%= @question.created_at %>
+</div>
+
+<div class="answer_display">
+<h2>Answers:</h2>
+<% @question.answers.each do |answer| %>
+  <%= answer.body %><br>
+  Votes:<%= answer.votes.count %><br>
+  <hr>
+<% end %>
+
 </div>

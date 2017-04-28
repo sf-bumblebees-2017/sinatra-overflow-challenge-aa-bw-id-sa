@@ -1,12 +1,28 @@
-get "/" do 
+get "/" do
   @questions = Question.all
   erb :'index'
-end 
+end
 
-get "/questions/:id" do 
-  @questions = Question.find_by(params[:id])
+get "/questions" do
+  redirect '/'
+end
+
+get "/questions/:id" do
+  @question = Question.find(params[:id])
   erb :'/questions/show'
-end 
+end
 
-# doin stuff
+get "/questions/new" do
+  "hello"
+end
+
+post "/questions" do
+  Question.create(
+    title: params[:title],
+    body: params[:body],
+    user_id: 1
+    )
+  redirect '/'
+end
+
 
