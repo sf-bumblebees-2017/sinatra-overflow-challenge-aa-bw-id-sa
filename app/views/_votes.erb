@@ -1,0 +1,14 @@
+<form method="post" action='/votes' class="inline">
+  <input type="hidden" name="vote[votable_type]" value="Question">
+  <input type="hidden" name="vote[votable_id]" value="<%= @question.id %>">
+  <input type="hidden" name="vote[upvote]" value="1">
+  <input type="hidden" name="vote[user_id]" value="<%= current_user.id %>">
+  <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button">UPVOTE</button>
+</form>
+<form method="post" action='/votes' class="inline">
+  <input type="hidden" name="vote[votable_type]" value="Question">
+  <input type="hidden" name="vote[votable_id]" value="<%= @question.id %>">
+  <input type="hidden" name="vote[upvote]" value="0">
+  <input type="hidden" name="vote[user_id]" value="<%= current_user.id %>">
+  <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button">DOWNVOTE</button>
+</form>

@@ -20,7 +20,7 @@ post "/questions" do
   Question.create(
     title: params[:title],
     body: params[:body],
-    user_id: 1
+    user_id: current_user.id
     )
   redirect '/'
 end

@@ -1,0 +1,8 @@
+<form id="question_comments" method="post" action="/comments">
+  Comment here:
+  <input type="hidden" name="comment[commentable_id]" value="<%= @question.id %>">
+  <input type="hidden" name="comment[commentable_type]" value="Question">
+  <input type="textarea" name="comment[body]" placeholder="body">
+  <input type="hidden" name="comment[user_id]" value="<%= current_user.id %>">
+  <input type="submit" value="submit comment">
+</form>
