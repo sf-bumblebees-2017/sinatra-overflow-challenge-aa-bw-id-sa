@@ -1,20 +1,20 @@
-get '/sessions/new' do 
+get '/sessions/new' do
   erb :'sessions/new'
-end 
+end
 
-post '/sessions' do 
-  @user = User.find_by(params[:username])
+post '/sessions' do
+  @user = User.find_by(username: params[:username])
     if @user && @user.password == params[:password]
       login(@user)
       redirect '/'
     else
       erb :'sessions/new'
-    end 
-end 
+    end
+end
 
 
-delete '/sessions' do 
+delete '/sessions' do
   logout
   redirect '/'
-end 
+end
 

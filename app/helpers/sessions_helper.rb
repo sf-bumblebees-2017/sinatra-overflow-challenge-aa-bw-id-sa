@@ -1,19 +1,19 @@
-helpers do 
+helpers do
 
   def login(user)
-    sessions[:id] = @users.id
-  end 
+    session[:id] = @user.id
+  end
 
   def current_user
-    @user ||= @user.find(session[:id]) if sessions[:id]
+    @user ||= User.find(session[:id]) if session[:id]
   end
 
   def logged_in?
     !!current_user
-  end 
-
-  def logout
-    sessions[:id] = nil
   end
 
-end 
+  def logout
+    session[:id] = nil
+  end
+
+end

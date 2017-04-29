@@ -1,6 +1,52 @@
-<h1> <%= @questions.title %> </h1>
+<h1> <%= @question.title %> </h1>
 
-<div class="question_displayyyyyy">
 
-	 
+<div class="question_display">
+<h2>Initial Question</h2>
+upvotes:<%= @question.votes.where(upvote: 1).count %><br>
+downvotes:<%= @question.votes.where(upvote: 0).count %><br>
+<%= erb :'_votes' %>
+<div class="question-body">
+<p><%= @question.body %></p>
+
+<h4>Comments:</h4>
+<hr>
+<% @question.comments.each do |comment| %>
+  <%= comment.body %><br>
+  <hr>
+<% end %>
+<%= erb :'_comments' %>
+<hr>
+<p>Created:</p><%= @question.created_at %>
+</div>
+</div>
+
+<div class="answer-body">
+<h2>Answers:</h2>
+  <% @question.answers.each do |answer| %>
+<div class="answer">
+    <%= answer.body %><br>
+
+    <hr>
+    Votes:<%= answer.votes.count %><br>
+    Comments:<br>
+    <hr>
+    <% answer.comments.each do |comment| %>
+    * <%= comment.body %><br>
+    <hr>
+  <% end %>
+  <br><br>
+  <%= erb :'_comments_answers', locals: {answer: answer} %>
+  </div>
+  <% end %>
+
+
+<% if current_user %>
+<form id="answers" method="post" action="/answers">
+  Enter your answer here:
+  <input type="hidden" name="question_id" value="<%= @question.id %>">
+  <input type="textarea" name="body" placeholder="body">
+  <input type="submit" value="submit new answer">
+</form>
+<% end %>
 </div>
