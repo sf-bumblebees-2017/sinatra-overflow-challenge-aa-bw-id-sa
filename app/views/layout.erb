@@ -26,7 +26,7 @@
     <a href="/users/<%=@current_user.id%>">Profile</a>
     <%= erb :'_logout', layout: false %>
   <% else %>
-    <a href="/sessions/new">Login</a>
+    <a id="button" href="/sessions/new">Login</a>
     <a href="/users/new">Sign Up</a>
   <% end %>
 </header>

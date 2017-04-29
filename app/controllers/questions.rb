@@ -9,7 +9,11 @@ end
 
 get "/questions/:id" do
   @question = Question.find(params[:id])
-  erb :'/questions/show'
+  if current_user
+    erb :'/questions/show'
+  else
+    redirect '/'
+  end
 end
 
 get "/questions/new" do
@@ -17,12 +21,16 @@ get "/questions/new" do
 end
 
 post "/questions" do
-  Question.create(
-    title: params[:title],
-    body: params[:body],
-    user_id: current_user.id
-    )
-  redirect '/'
+  if current_user
+    Question.create(
+      title: params[:title],
+      body: params[:body],
+      user_id: current_user.id
+      )
+    redirect '/'
+  else
+    redirect '/'
+  end
 end
 
 

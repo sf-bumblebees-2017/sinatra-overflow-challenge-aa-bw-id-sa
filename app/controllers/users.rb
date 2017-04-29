@@ -1,5 +1,5 @@
 get '/users/new' do
-  erb :'users/new'
+  erb :'/users/new'
 end
 
 post '/users' do
@@ -7,7 +7,7 @@ post '/users' do
   if @user.save
     redirect '/sessions/new'
   else
-    erb :'users/new'
+    erb :'/users/new'
   end
 end
 

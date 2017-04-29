@@ -6,7 +6,7 @@
     <article id="<%= question.id %>">
       <h2><a href='/questions/<%= question.id %>'><%= question.title %></a></h2>
       <p>
-        <span class='points'><%= question.votes.count %></span>
+        <span class='points'><%= question.votes.count%></span>
         <span class='username'><%= User.find(question.user_id).username %></span>
         <span class='timestamp'><%= question.created_at %></span>
         <span class='comment-count'><%= question.comments.count %></span>
